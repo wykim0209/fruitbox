@@ -1,0 +1,32 @@
+[gd_scene load_steps=3 format=3 uid="uid://c02cle67lf3mv"]
+
+[ext_resource type="Texture2D" uid="uid://1nl7qa4i5gj" path="res://assets/sprites/fruit.png" id="1_4w3tw"]
+[ext_resource type="Script" uid="uid://brumwt4km7gx3" path="res://scripts/fruit_pop.gd" id="1_cofct"]
+
+[node name="FruitPop" type="RigidBody2D"]
+script = ExtResource("1_cofct")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_4w3tw")
+
+[node name="Label" type="Label" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -17.5
+offset_top = -17.5
+offset_right = 17.5
+offset_bottom = 17.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 25
+text = "1"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="DestructTimer" type="Timer" parent="."]
+autostart = true
+
+[connection signal="timeout" from="DestructTimer" to="." method="_on_destruct_timer_timeout"]

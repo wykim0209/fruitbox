@@ -1,0 +1,27 @@
+[gd_scene load_steps=5 format=3 uid="uid://1rlj31bc4fh3"]
+
+[ext_resource type="Script" uid="uid://wubvinwlu04b" path="res://scripts/main.gd" id="1_o5qli"]
+[ext_resource type="PackedScene" uid="uid://che6xht7pdebo" path="res://scenes/drag_area.tscn" id="3_jyhfs"]
+[ext_resource type="PackedScene" uid="uid://dtwlh1ngil0u6" path="res://scenes/hud.tscn" id="4_jyhfs"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_sgp6g"]
+size = Vector2(720, 360)
+
+[node name="Main" type="Node2D"]
+script = ExtResource("1_o5qli")
+
+[node name="Background" type="ColorRect" parent="."]
+offset_right = 800.0
+offset_bottom = 450.0
+color = Color(0.847059, 0.886275, 0.788235, 1)
+
+[node name="FruitArea" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="FruitArea"]
+position = Vector2(400, 250)
+shape = SubResource("RectangleShape2D_sgp6g")
+
+[node name="DragArea" parent="." instance=ExtResource("3_jyhfs")]
+
+[node name="HUD" parent="." instance=ExtResource("4_jyhfs")]
+unique_name_in_owner = true

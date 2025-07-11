@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://che6xht7pdebo"]
+
+[ext_resource type="Script" uid="uid://cuglusmpb7v04" path="res://scripts/drag_area.gd" id="1_rfcq7"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0wfyh"]
+
+[node name="DragArea" type="Area2D"]
+z_index = 10
+script = ExtResource("1_rfcq7")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_0wfyh")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_right = 40.0
+offset_bottom = 40.0
+color = Color(0, 0.752941, 1, 0.25098)

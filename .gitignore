@@ -1,0 +1,50 @@
+# Godot 4+ specific
+.godot/
+.nomedia
+
+# Godot-specific
+android/
+.import/
+*.import
+export.cfg
+export_credentials.cfg
+
+# Exported binaries
+*.exe
+*.apk
+*.aab
+*.pck
+*.zip
+export/
+
+# Godot build cache (if using C++ modules or GDExtension)
+bin/
+*.bin
+*.dll
+*.so
+*.dylib
+
+# Mono / C# (if using Godot Mono)
+.mono/
+data_*/
+mono_crash.*
+*.csproj
+*.sln
+*.user
+*.dll
+*.pdb
+*.mdb
+*.cache
+
+# System-specific
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# VSCode or JetBrains IDE settings (optional)
+.vscode/
+.idea/
+*.code-workspace
+
+# Godot-generated lock file
+.godot/lockfile

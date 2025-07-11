@@ -1,0 +1,39 @@
+[gd_scene load_steps=5 format=3 uid="uid://bm14wcwlpedr1"]
+
+[ext_resource type="Texture2D" uid="uid://1nl7qa4i5gj" path="res://assets/sprites/fruit.png" id="1_lfepc"]
+[ext_resource type="Script" uid="uid://y1n5f0hb13w7" path="res://scripts/fruit.gd" id="1_yvtr8"]
+[ext_resource type="Texture2D" uid="uid://dk3jgae0smh2r" path="res://assets/sprites/fruit_shadow.png" id="2_t2alg"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_lfepc"]
+radius = 16.0
+
+[node name="Fruit" type="Area2D"]
+script = ExtResource("1_yvtr8")
+
+[node name="Shadow" type="Sprite2D" parent="."]
+visible = false
+scale = Vector2(1.1, 1.1)
+texture = ExtResource("2_t2alg")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_lfepc")
+
+[node name="Label" type="Label" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -17.5
+offset_top = -17.5
+offset_right = 17.5
+offset_bottom = 17.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 25
+text = "1"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_lfepc")
