@@ -1,6 +1,7 @@
-[gd_scene load_steps=9 format=3 uid="uid://ugag3rg264an"]
+[gd_scene load_steps=10 format=3 uid="uid://ugag3rg264an"]
 
 [ext_resource type="Script" uid="uid://cl3bk2cw7atsy" path="res://scripts/stats.gd" id="1_3f7q0"]
+[ext_resource type="FontFile" uid="uid://blhg73s33pstp" path="res://assets/fonts/OdorMeanChey-Regular.ttf" id="2_fk87l"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yxilm"]
 bg_color = Color(0.752941, 0.85098, 0.866667, 1)
@@ -92,6 +93,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_colors/font_color = Color(0.101961, 0.588235, 0.666667, 1)
+theme_override_fonts/font = ExtResource("2_fk87l")
 theme_override_font_sizes/font_size = 36
 text = "SETTINGS"
 horizontal_alignment = 1

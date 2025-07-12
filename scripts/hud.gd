@@ -21,8 +21,8 @@ func _on_game_timer_timeout() -> void:
 	update_game_time(game_time)
 	if game_time == 0:
 		$GameTimer.stop()
-		show_result()
 		update_result()
+		show_result()
 
 func update_game_time(time):
 	$GameTime.text = str(time)
@@ -45,20 +45,25 @@ func update_result():
 	if score > Global.settings["best_score"]:
 		Global.settings["best_score"] = score
 	Global.save_settings()
+	$Stats.apply_values()
 
 func _on_redo_button_pressed() -> void:
+	ButtonPlayer.play()
 	var scene_path = get_tree().current_scene.scene_file_path
 	var scene = load(scene_path)
 	get_tree().change_scene_to_packed(scene)
 
 
 func _on_home_button_pressed() -> void:
+	ButtonPlayer.play()
 	get_tree().change_scene_to_packed(home_scene)
 
 
 func _on_stat_button_pressed() -> void:
+	ButtonPlayer.play()
 	$Stats.visible = true
 
 
 func _on_top_home_button_pressed() -> void:
+	ButtonPlayer.play()
 	get_tree().change_scene_to_packed(home_scene)

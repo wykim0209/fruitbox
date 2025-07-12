@@ -19,6 +19,7 @@ config/icon="res://icon.svg"
 
 BgmPlayer="*res://scenes/bgm_player.tscn"
 Global="*res://scripts/global.gd"
+ButtonPlayer="*res://scenes/button_player.tscn"
 
 [display]
 

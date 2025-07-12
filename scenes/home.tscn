@@ -1,6 +1,7 @@
-[gd_scene load_steps=15 format=3 uid="uid://bnaew43llggaw"]
+[gd_scene load_steps=16 format=3 uid="uid://bnaew43llggaw"]
 
 [ext_resource type="Script" uid="uid://cedx0hbggccin" path="res://scripts/home.gd" id="1_reixx"]
+[ext_resource type="FontFile" uid="uid://blhg73s33pstp" path="res://assets/fonts/OdorMeanChey-Regular.ttf" id="2_gi00y"]
 [ext_resource type="Texture2D" uid="uid://rujsj1ohq0wu" path="res://assets/sprites/play_btn_normal.png" id="2_ip4d6"]
 [ext_resource type="Texture2D" uid="uid://ca8u0nyuw2dhy" path="res://assets/sprites/play_btn_pressed.png" id="3_gi00y"]
 [ext_resource type="Texture2D" uid="uid://do5tdrmb0ajck" path="res://assets/sprites/shop_btn_noraml.png" id="4_rpgsi"]
@@ -48,6 +49,10 @@ offset_right = 600.0
 offset_bottom = 120.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 20
+theme_override_fonts/font = ExtResource("2_gi00y")
 theme_override_font_sizes/font_size = 64
 text = "APPLE GAME"
 horizontal_alignment = 1
@@ -100,5 +105,7 @@ visible = false
 visible = false
 
 [connection signal="pressed" from="PlayButton" to="." method="_on_play_button_pressed"]
+[connection signal="pressed" from="ShopButton" to="." method="_on_shop_button_pressed"]
 [connection signal="pressed" from="StatButton" to="." method="_on_stat_button_pressed"]
 [connection signal="pressed" from="SettingButton" to="." method="_on_setting_button_pressed"]
+[connection signal="pressed" from="InfoButton" to="." method="_on_info_button_pressed"]
