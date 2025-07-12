@@ -2,6 +2,9 @@ extends Node
 
 var settings := {
 	"is_bgm_on": true,
+	"played": 0,
+	"all_clear": 0,
+	"best_score": 0,
 }
 
 const SAVE_PATH := "user://settings.json"
@@ -21,7 +24,8 @@ func load_settings():
 
 	var result = JSON.parse_string(content)
 	if typeof(result) == TYPE_DICTIONARY:
-		settings = result
+		for key in result.keys():
+			settings[key] = result[key]
 
 func apply_settings():
 	if settings["is_bgm_on"]:

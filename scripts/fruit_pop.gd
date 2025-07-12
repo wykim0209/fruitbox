@@ -14,11 +14,8 @@ func _ready() -> void:
 	var velocity = Vector2.RIGHT.rotated(angle_radians) * speed
 	linear_velocity = velocity
 	gravity_scale = custom_gravity_scale
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
+	
+	$PopSound.play()
 
 
 func _on_destruct_timer_timeout() -> void:

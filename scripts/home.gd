@@ -47,4 +47,10 @@ func _on_play_button_pressed() -> void:
 
 
 func _on_setting_button_pressed() -> void:
+	$Settings.apply_values()
 	$Settings.visible = true
+
+
+func _on_stat_button_pressed() -> void:
+	$Stats.apply_values()
+	$Stats.visible = true

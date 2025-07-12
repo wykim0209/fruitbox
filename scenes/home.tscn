@@ -1,12 +1,18 @@
-[gd_scene load_steps=9 format=3 uid="uid://bnaew43llggaw"]
+[gd_scene load_steps=15 format=3 uid="uid://bnaew43llggaw"]
 
 [ext_resource type="Script" uid="uid://cedx0hbggccin" path="res://scripts/home.gd" id="1_reixx"]
-[ext_resource type="Texture2D" uid="uid://bjp0u1dabbeqv" path="res://assets/sprites/shop_btn.png" id="3_yxilm"]
-[ext_resource type="Texture2D" uid="uid://b52avhkmquubk" path="res://assets/sprites/result_stat_btn.png" id="4_4fycn"]
-[ext_resource type="Texture2D" uid="uid://b5tcvh4dtgok8" path="res://assets/sprites/play_btn.png" id="4_mahjx"]
-[ext_resource type="Texture2D" uid="uid://cgky8agyqrnbh" path="res://assets/sprites/settings_btn.png" id="5_vc333"]
-[ext_resource type="Texture2D" uid="uid://ccgbvqk85w8ap" path="res://assets/sprites/info_btn.png" id="6_hhep5"]
+[ext_resource type="Texture2D" uid="uid://rujsj1ohq0wu" path="res://assets/sprites/play_btn_normal.png" id="2_ip4d6"]
+[ext_resource type="Texture2D" uid="uid://ca8u0nyuw2dhy" path="res://assets/sprites/play_btn_pressed.png" id="3_gi00y"]
+[ext_resource type="Texture2D" uid="uid://do5tdrmb0ajck" path="res://assets/sprites/shop_btn_noraml.png" id="4_rpgsi"]
+[ext_resource type="Texture2D" uid="uid://cja5afoxsl0j6" path="res://assets/sprites/shop_btn_pressed.png" id="5_ju5sp"]
+[ext_resource type="Texture2D" uid="uid://b532vh8d7dtbp" path="res://assets/sprites/stat_btn_normal.png" id="6_o7pnx"]
+[ext_resource type="Texture2D" uid="uid://mbsflhexel7u" path="res://assets/sprites/stat_btn_pressed.png" id="7_aish6"]
 [ext_resource type="PackedScene" uid="uid://bal3arpldg2k5" path="res://scenes/settings.tscn" id="7_mahjx"]
+[ext_resource type="PackedScene" uid="uid://ugag3rg264an" path="res://scenes/stats.tscn" id="8_4fycn"]
+[ext_resource type="Texture2D" uid="uid://diydgap3gf121" path="res://assets/sprites/setting_btn_normal.png" id="8_snnha"]
+[ext_resource type="Texture2D" uid="uid://kg04l1sstgt1" path="res://assets/sprites/setting_btn_pressed.png" id="9_e42qu"]
+[ext_resource type="Texture2D" uid="uid://4yoyfs4iuiip" path="res://assets/sprites/info_btn_normal.png" id="10_ppa51"]
+[ext_resource type="Texture2D" uid="uid://dvvskh14m27un" path="res://assets/sprites/info_btn_pressed.png" id="11_kc6b6"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ekxnf"]
 size = Vector2(720, 360)
@@ -52,38 +58,47 @@ offset_left = 328.0
 offset_top = 191.0
 offset_right = 472.0
 offset_bottom = 259.0
-texture_normal = ExtResource("4_mahjx")
+texture_normal = ExtResource("2_ip4d6")
+texture_pressed = ExtResource("3_gi00y")
 
 [node name="ShopButton" type="TextureButton" parent="."]
 offset_left = 300.0
 offset_top = 350.0
 offset_right = 340.0
 offset_bottom = 393.0
-texture_normal = ExtResource("3_yxilm")
+texture_normal = ExtResource("4_rpgsi")
+texture_pressed = ExtResource("5_ju5sp")
 
 [node name="StatButton" type="TextureButton" parent="."]
 offset_left = 450.0
 offset_top = 350.0
 offset_right = 490.0
 offset_bottom = 393.0
-texture_normal = ExtResource("4_4fycn")
+texture_normal = ExtResource("6_o7pnx")
+texture_pressed = ExtResource("7_aish6")
 
 [node name="SettingButton" type="TextureButton" parent="."]
 offset_left = 720.0
 offset_top = 40.0
 offset_right = 762.0
 offset_bottom = 85.0
-texture_normal = ExtResource("5_vc333")
+texture_normal = ExtResource("8_snnha")
+texture_pressed = ExtResource("9_e42qu")
 
 [node name="InfoButton" type="TextureButton" parent="."]
 offset_left = 720.0
 offset_top = 100.0
 offset_right = 762.0
 offset_bottom = 143.0
-texture_normal = ExtResource("6_hhep5")
+texture_normal = ExtResource("10_ppa51")
+texture_pressed = ExtResource("11_kc6b6")
 
 [node name="Settings" parent="." instance=ExtResource("7_mahjx")]
 visible = false
 
+[node name="Stats" parent="." instance=ExtResource("8_4fycn")]
+visible = false
+
 [connection signal="pressed" from="PlayButton" to="." method="_on_play_button_pressed"]
+[connection signal="pressed" from="StatButton" to="." method="_on_stat_button_pressed"]
 [connection signal="pressed" from="SettingButton" to="." method="_on_setting_button_pressed"]

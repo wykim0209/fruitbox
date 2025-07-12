@@ -1,12 +1,15 @@
-[gd_scene load_steps=10 format=3 uid="uid://dtwlh1ngil0u6"]
+[gd_scene load_steps=13 format=3 uid="uid://dtwlh1ngil0u6"]
 
 [ext_resource type="Script" uid="uid://darbk6esbrnph" path="res://scripts/hud.gd" id="1_5ysmq"]
-[ext_resource type="Texture2D" uid="uid://d1vun6kiox1kt" path="res://assets/sprites/home_btn.png" id="2_6fi6k"]
 [ext_resource type="Texture2D" uid="uid://hfhpxss1bicf" path="res://assets/sprites/access_alarm.png" id="3_uo2fv"]
 [ext_resource type="Texture2D" uid="uid://dwx6l44ch24m3" path="res://assets/sprites/result_title.png" id="4_6fi6k"]
-[ext_resource type="Texture2D" uid="uid://djcw30ndh1645" path="res://assets/sprites/result_redo_btn.png" id="5_5pdws"]
-[ext_resource type="Texture2D" uid="uid://b52avhkmquubk" path="res://assets/sprites/result_stat_btn.png" id="6_hd3ao"]
-[ext_resource type="Texture2D" uid="uid://c7eucohur2s4a" path="res://assets/sprites/result_home_btn.png" id="7_0i1j5"]
+[ext_resource type="Texture2D" uid="uid://c4bqno2ufxh0c" path="res://assets/sprites/reset_btn_normal.png" id="6_mphia"]
+[ext_resource type="Texture2D" uid="uid://puym6s4iqvgh" path="res://assets/sprites/home_btn_normal.png" id="7_0i1j5"]
+[ext_resource type="Texture2D" uid="uid://ox74txjrmbbj" path="res://assets/sprites/reset_btn_pressed.png" id="7_0m4u7"]
+[ext_resource type="Texture2D" uid="uid://b532vh8d7dtbp" path="res://assets/sprites/stat_btn_normal.png" id="8_apjy4"]
+[ext_resource type="PackedScene" uid="uid://ugag3rg264an" path="res://scenes/stats.tscn" id="8_hd3ao"]
+[ext_resource type="Texture2D" uid="uid://vkp6by3t8y27" path="res://assets/sprites/home_btn_pressed.png" id="8_mphia"]
+[ext_resource type="Texture2D" uid="uid://mbsflhexel7u" path="res://assets/sprites/stat_btn_pressed.png" id="9_5n1hp"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5ysmq"]
 bg_color = Color(0.94902, 0.913725, 0.501961, 1)
@@ -30,7 +33,8 @@ offset_left = 40.0
 offset_top = 10.0
 offset_right = 90.0
 offset_bottom = 60.0
-texture_normal = ExtResource("2_6fi6k")
+texture_normal = ExtResource("7_0i1j5")
+texture_pressed = ExtResource("8_mphia")
 stretch_mode = 4
 
 [node name="Alarm" type="Sprite2D" parent="."]
@@ -173,16 +177,24 @@ alignment = 1
 
 [node name="RedoButton" type="TextureButton" parent="Result/HBoxContainer"]
 layout_mode = 2
-texture_normal = ExtResource("5_5pdws")
+texture_normal = ExtResource("6_mphia")
+texture_pressed = ExtResource("7_0m4u7")
 
 [node name="StatButton" type="TextureButton" parent="Result/HBoxContainer"]
 layout_mode = 2
-texture_normal = ExtResource("6_hd3ao")
+texture_normal = ExtResource("8_apjy4")
+texture_pressed = ExtResource("9_5n1hp")
 
 [node name="HomeButton" type="TextureButton" parent="Result/HBoxContainer"]
 layout_mode = 2
 texture_normal = ExtResource("7_0i1j5")
+texture_pressed = ExtResource("8_mphia")
 
+[node name="Stats" parent="." instance=ExtResource("8_hd3ao")]
+visible = false
+
+[connection signal="pressed" from="HomeButton" to="." method="_on_top_home_button_pressed"]
 [connection signal="timeout" from="GameTimer" to="." method="_on_game_timer_timeout"]
 [connection signal="pressed" from="Result/HBoxContainer/RedoButton" to="." method="_on_redo_button_pressed"]
+[connection signal="pressed" from="Result/HBoxContainer/StatButton" to="." method="_on_stat_button_pressed"]
 [connection signal="pressed" from="Result/HBoxContainer/HomeButton" to="." method="_on_home_button_pressed"]

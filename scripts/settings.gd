@@ -3,17 +3,14 @@ extends Control
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	apply_values()
+
+func apply_values():
 	var btn1 = $Box/MenuPanel/Menu1/Button
 	if Global.settings["is_bgm_on"]:
 		btn1.text = "ON"
 	else:
 		btn1.text = "OFF"
-		
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
 
 
 func _on_invisible_bg_gui_input(event: InputEvent) -> void:
