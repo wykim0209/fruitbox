@@ -6,6 +6,7 @@
 
 [node name="DragArea" type="Area2D"]
 z_index = 10
+collision_layer = 2
 script = ExtResource("1_rfcq7")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

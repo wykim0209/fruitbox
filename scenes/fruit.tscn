@@ -1,13 +1,15 @@
-[gd_scene load_steps=5 format=3 uid="uid://bm14wcwlpedr1"]
+[gd_scene load_steps=6 format=3 uid="uid://bm14wcwlpedr1"]
 
 [ext_resource type="Script" uid="uid://y1n5f0hb13w7" path="res://scripts/fruit.gd" id="1_yvtr8"]
 [ext_resource type="Texture2D" uid="uid://dk3jgae0smh2r" path="res://assets/sprites/fruit_shadow.png" id="2_t2alg"]
 [ext_resource type="Texture2D" uid="uid://br5hashekuus2" path="res://assets/sprites/apple.png" id="3_t2alg"]
+[ext_resource type="AudioStream" uid="uid://k06jhjcy2fvs" path="res://assets/sounds/apple_select.wav" id="4_64keg"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_lfepc"]
 radius = 16.0
 
 [node name="Fruit" type="Area2D"]
+collision_mask = 2
 script = ExtResource("1_yvtr8")
 
 [node name="Shadow" type="Sprite2D" parent="."]
@@ -37,3 +39,9 @@ vertical_alignment = 1
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_lfepc")
+
+[node name="SelectSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_64keg")
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]
+[connection signal="area_exited" from="." to="." method="_on_area_exited"]

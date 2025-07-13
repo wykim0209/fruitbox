@@ -10,11 +10,7 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	var areas = get_overlapping_areas()
-	if areas.size() > 1:
-		$Shadow.visible = true
-	else:
-		$Shadow.visible = false
+	pass
 
 
 func on_hit_by_drag():
@@ -28,3 +24,12 @@ func on_hit_by_drag():
 	get_tree().current_scene.add_child(fruit_pop)
 	
 	queue_free()
+
+
+func _on_area_entered(area: Area2D) -> void:
+	$Shadow.visible = true
+	$SelectSound.play()
+
+
+func _on_area_exited(area: Area2D) -> void:
+	$Shadow.visible = false
