@@ -13,7 +13,7 @@ config_version=5
 config/name="fruitbox"
 run/main_scene="uid://bnaew43llggaw"
 config/features=PackedStringArray("4.4", "Mobile")
-config/icon="uid://cgofqp72685lb"
+config/icon="uid://gffk4f8s6w8d"
 
 [autoload]
 
