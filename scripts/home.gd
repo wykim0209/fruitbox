@@ -4,7 +4,6 @@ extends Node2D
 
 
 func _on_play_button_pressed() -> void:
-	ButtonPlayer.play()
 	get_tree().change_scene_to_packed(main_scene)
 
 

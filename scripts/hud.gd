@@ -2,13 +2,14 @@ extends CanvasLayer
 
 var home_scene = load("res://scenes/home.tscn")
 var score = 0
-var game_time = 120
+var game_time = 10
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	for child in $Result.get_children():
 		if child is CanvasItem or child is Node3D:
 			child.visible = false
+	$StartSoundPlayer.play()
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -23,6 +24,7 @@ func _on_game_timer_timeout() -> void:
 		$GameTimer.stop()
 		update_result()
 		show_result()
+		$EndSoundPlayer.play()
 
 func update_game_time(time):
 	$GameTime.text = str(time)
