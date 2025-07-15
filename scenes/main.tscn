@@ -13,7 +13,7 @@ script = ExtResource("1_o5qli")
 [node name="Background" type="ColorRect" parent="."]
 offset_right = 800.0
 offset_bottom = 450.0
-color = Color(0.847059, 0.886275, 0.788235, 1)
+color = Color(0.87451, 0.952941, 0.760784, 1)
 
 [node name="FruitArea" type="Area2D" parent="."]
 

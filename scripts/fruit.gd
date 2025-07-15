@@ -19,7 +19,7 @@ func on_hit_by_drag():
 	
 	var fruit_pop = fruit_pop_scene.instantiate()
 	fruit_pop.position = self.position
-	fruit_pop.scale = Vector2(1.0625, 1.0625)
+	#fruit_pop.scale = Vector2(1.0625, 1.0625)
 	fruit_pop.get_node("Label").text = $Label.text
 	get_tree().current_scene.add_child(fruit_pop)
 	
