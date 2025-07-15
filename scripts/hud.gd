@@ -2,7 +2,7 @@ extends CanvasLayer
 
 var home_scene = load("res://scenes/home.tscn")
 var score = 0
-var game_time = 10
+var game_time = 120
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
