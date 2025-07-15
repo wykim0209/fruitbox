@@ -22,7 +22,6 @@ func reset_fruits():
 			
 			var fruit = fruit_scene.instantiate()
 			fruit.position = Vector2(x, y)
-			#fruit.scale = Vector2(1.0625, 1.0625)
 			fruit.get_node("Label").text = str(randi() % 9 + 1)
 			add_child(fruit)
 
